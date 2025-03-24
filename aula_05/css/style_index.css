@@ -1,0 +1,32 @@
+body {
+    
+    background-image: url('../img/background\ index.png');
+    display: flex;
+    align-items: center;
+    
+    /* faz com que o align-itens funcione */
+    height: 100vh; 
+
+    /* isso é para deixar a img do fundo mais clara */
+    background-color: rgba(255, 255, 255, 0.699);
+    background-blend-mode: overlay;  
+}
+
+.container {    
+    max-width: 400px;
+    width: 100%;
+}
+
+.container h5 {
+    background: #0044ff;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/*botão de login */
+.btn-primary {
+    width: 100%;    
+    font-weight: bold;
+}
