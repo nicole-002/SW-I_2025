@@ -11,25 +11,25 @@
         include_once 'pedaco.php';
     ?>
 
-    <h2>Formulário para Cadastro de Livros</h2>
+    <h2 style = "text-align: center">Formulário para Cadastro de Livros</h2>
 
     <div class="container">
         <h2>Preencha os dados do Livro</h2>
-        <form>
+        <form action="inserir.php" method="POST">
             <div class="mb-3">
-                <input placeholder="Título" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input placeholder="Título" type="text" name="titulo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <input placeholder="Gênero" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input placeholder="Gênero" type="text" name="genero" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <input placeholder="Autor" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input placeholder="Autor" type="text" name="autor" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <input placeholder="Ano de Publicação" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input placeholder="Ano de Publicação" name="ano"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <input placeholder="Quantidade de Páginas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input placeholder="Quantidade de Páginas" type="text" name="pag" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>            
             
             <button type="submit" class="btn btn-primary">Enviar</button>

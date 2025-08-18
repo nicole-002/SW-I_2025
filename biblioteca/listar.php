@@ -8,10 +8,11 @@
 </head>
 <body>
     <?php
+        require 'conexao.php';
         include_once 'pedaco.php';
     ?>
 
-    <h2>Lista de Livros Disponíveis</h2>
+    <h2 style = "text-align: center">Lista de Livros Disponíveis</h2>
 
     <div class='container'>
         <table class="table">
@@ -26,6 +27,29 @@
                 </tr>   
             </thead>
             <tbody>
+                <?php                
+                    $sql = "SELECT * FROM livros";
+                    $stmt = $pdo->query($sql);
+                    while ($livro = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                        echo"<tr>";
+                        echo "<th scope='row'>".$livro."</th>";
+                        echo "<td>".$livro['titulo']."</td>";
+                        echo "<td>".$livro['genero']."</td>";
+                        echo "<td>".$livro['ano']."</td>";
+                        echo "<td>".$livro['autor']."</td>";
+                        echo "<td>".$livro['paginas']."</td>";
+
+                        echo "ID: " . $livro['id_livro'] . "<br>";
+                        echo "Titulo: " . $livro['titulo'] . "<br>";
+                        echo "Gênero: " . $livro['genero'] . "<br>";
+                        echo "Ano:" . $livro['ano'] . "<br>";
+                        echo "Autor: " . $livro['autor'] . "<br>";
+                        echo "Páginas: " . $livro['paginas'] . "<br><hr>";
+
+                        echo"<tr>";
+                    }
+                ?>
                 <tr>
                     <th scope="row">1</th>
                     <td>O Pequeno Príncipe</td>
@@ -51,6 +75,8 @@
                     <td>@social</td>
                 </tr>
             </tbody>
+
+
         </table>
 
         <a href="index.php" type="button" class="btn btn-primary">Voltar</a>
