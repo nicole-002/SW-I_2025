@@ -24,6 +24,7 @@
                     <th scope="col">Autor</th>
                     <th scope="col">Ano</th>
                     <th scope="col">Páginas</th>
+                    <th scope="col">Opções</th>
                 </tr>   
             </thead>
             <tbody>
@@ -33,49 +34,27 @@
                     while ($livro = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                         echo"<tr>";
-                        echo "<th scope='row'>".$livro."</th>";
+                        echo "<th scope='row'>".$livro['id_livro']."</th>";
                         echo "<td>".$livro['titulo']."</td>";
                         echo "<td>".$livro['genero']."</td>";
-                        echo "<td>".$livro['ano']."</td>";
                         echo "<td>".$livro['autor']."</td>";
+                        echo "<td>".$livro['ano']."</td>";
                         echo "<td>".$livro['paginas']."</td>";
+                        echo 
+                        "<td>
+                            <div class='d-grid gap-2 d-md-block' style = 'text-align: center'>
+                                <a href='form.atualizar.php?id_livro= ".$livro['id_livro']." '   type='button' class='btn btn-danger'>Atualizar</a>
+                                <a href='#' type='button' class='btn btn-warning'>Apagar</a>       
+                            </div>
+                        </td>";
 
-                        echo "ID: " . $livro['id_livro'] . "<br>";
-                        echo "Titulo: " . $livro['titulo'] . "<br>";
-                        echo "Gênero: " . $livro['genero'] . "<br>";
-                        echo "Ano:" . $livro['ano'] . "<br>";
-                        echo "Autor: " . $livro['autor'] . "<br>";
-                        echo "Páginas: " . $livro['paginas'] . "<br><hr>";
+                        
 
                         echo"<tr>";
                     }
                 ?>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>O Pequeno Príncipe</td>
-                    <td>Literatura Infantil</td>
-                    <td>Antoine de Saint-Exupéry</td>
-                    <td>1943</td>
-                    <td>96</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Dom Casmuro</td>    
-                    <td>Romance</td>
-                    <td>Machado de Assis</td>
-                    <td>1900</td>
-                    <td>338</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>@social</td>
-                    <td>@social</td>
-                    <td>@social</td>
-                </tr>
+                
             </tbody>
-
 
         </table>
 

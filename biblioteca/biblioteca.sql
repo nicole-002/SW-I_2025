@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Ago-2025 às 12:51
+-- Tempo de geração: 25-Ago-2025 às 14:04
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -20,9 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `biblioteca`
 --
-CREATE DATABASE biblioteca;
 
-USE biblioteca;
 -- --------------------------------------------------------
 
 --
@@ -30,12 +28,40 @@ USE biblioteca;
 --
 
 CREATE TABLE `livros` (
+  `id_livro` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `genero` varchar(255) NOT NULL,
-  `ano` date NOT NULL,
+  `ano` int(4) NOT NULL,
   `autor` varchar(255) NOT NULL,
   `paginas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `livros`
+--
+
+INSERT INTO `livros` (`id_livro`, `titulo`, `genero`, `ano`, `autor`, `paginas`) VALUES
+(1, 'Minhha Vida Fora de Série', 'Romance', 2012, 'Paula Pimenta', 350);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `livros`
+--
+ALTER TABLE `livros`
+  ADD PRIMARY KEY (`id_livro`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `livros`
+--
+ALTER TABLE `livros`
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
